@@ -13,7 +13,8 @@ export default function Home() {
     setMsg("");
 
     try {
-      const res = await fetch("http://localhost:3000/users", {
+     const res = await fetch(
+  `${process.env.NEXT_PUBLIC_API_URL}/users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email }),
